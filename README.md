@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# satriaputra — portfolio
 
-## Getting Started
+Single-page portfolio for Satria Putra, AI Engineer (Full Stack). Static export, no backend, no tracking.
 
-First, run the development server:
+Each system from the CV is explained with an interactive diagram you can run in the browser: the delivery loop, receipt OCR, the NestJS to Go strangler-fig migration, and the five-layer fraud check.
+
+## Stack
+
+Next.js 16 (App Router, `output: "export"`), TypeScript, Tailwind v4, `motion` for the interactive pieces, inline SVG for diagrams. Fonts are self-hosted (Bricolage Grotesque, IBM Plex Sans, IBM Plex Mono).
+
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build and check
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build      # static export to ./out
+npx tsc --noEmit
+npx eslint src scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# visual + interaction check (needs Google Chrome installed)
+python3 -m http.server 4173 --bind 127.0.0.1 --directory out &
+node scripts/shots.mjs http://127.0.0.1:4173/ /tmp/shots
+```
 
-## Learn More
+`?theme=dark` or `?theme=light` on the URL overrides the system colour scheme (used for screenshots).
 
-To learn more about Next.js, take a look at the following resources:
+## Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All copy and numbers live in `src/content/site.ts`. They mirror the CV; if one changes, change the other.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel: import the repo, framework preset Next.js, no extra settings. The `out/` folder is also plain static files and can be served from anywhere.
