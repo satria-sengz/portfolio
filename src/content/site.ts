@@ -9,7 +9,6 @@ export const site = {
   links: {
     email: "satriaputra1994@gmail.com",
     linkedin: "https://www.linkedin.com/in/satriaputra",
-    github: "https://github.com/satria-putra",
     cv: "/Satria_Putra_CV.pdf",
   },
 };

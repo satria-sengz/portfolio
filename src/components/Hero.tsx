@@ -23,9 +23,6 @@ export function Hero() {
             <a className="btn btn-quiet" href={links.linkedin} rel="me">
               LinkedIn
             </a>
-            <a className="btn btn-quiet" href={links.github} rel="me">
-              GitHub
-            </a>
             <a className="btn btn-quiet" href={`mailto:${links.email}`}>
               Email
             </a>

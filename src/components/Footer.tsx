@@ -25,9 +25,6 @@ export function Footer() {
           <a className="btn btn-quiet" href={links.linkedin} rel="me">
             LinkedIn
           </a>
-          <a className="btn btn-quiet" href={links.github} rel="me">
-            GitHub
-          </a>
           <a className="btn btn-quiet" href={links.cv} download>
             CV as PDF
           </a>
