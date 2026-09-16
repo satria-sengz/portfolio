@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://satria-putra.vercel.app"),
+  alternates: { canonical: "/" },
   title: "Satria Putra, AI Engineer (Full Stack)",
   description:
     "I build the pipeline my team ships through: spec-driven subagents, failing-test-first gates, multi-repo orchestration. How the systems on my CV actually work.",
