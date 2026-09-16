@@ -21,6 +21,12 @@ export function Footer() {
         >
           {links.email}
         </a>
+        <p className="mt-3 text-muted">
+          WhatsApp or call:{" "}
+          <a href={links.phoneHref} className="text-ink">
+            {links.phone}
+          </a>
+        </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a className="btn btn-quiet" href={links.linkedin} rel="me">
             LinkedIn

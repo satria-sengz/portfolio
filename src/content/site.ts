@@ -8,6 +8,8 @@ export const site = {
     "Tangerang, Indonesia (UTC+7). Open to remote work with a few hours of overlap.",
   links: {
     email: "satriaputra1994@gmail.com",
+    phone: "+62 819 7230 060",
+    phoneHref: "tel:+628197230060",
     linkedin: "https://www.linkedin.com/in/satriaputra",
     cv: "/Satria_Putra_CV.pdf",
   },
